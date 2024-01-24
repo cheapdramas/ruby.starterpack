@@ -226,19 +226,24 @@
 #    end
 #end
 
-################# .map
-hash_simp = {'data' => [{name:'Sherlock',surname:'bitch'},{name:'Bodgan',surname:'Хуїла'}]}
+################# .map, .include?
+#hash_simp = {'data' => [{name:'Sherlock',surname:'bitch'},{name:'Bodgan',surname:'Хуїла'}]}
+#
+#names = hash_simp['data'].map {|h| h[:name]}
+#
+#inp = gets.strip.downcase
+#
+#found = names.select do |tweet|
+#    tweet.downcase.include? (inp)
+#end 
+#
+#if found.length != 0
+#    puts found[0]
+#else
+#    puts'Nothing'
+#end
 
-names = hash_simp['data'].map {|h| h[:name]}
+############### MINI QUIZ
 
-inp = gets.strip.downcase
 
-found = names.select do |tweet|
-    tweet.downcase.include?(inp)
-end 
 
-if found.length != 0
-    puts found[0]
-else
-    puts'Ніхуя'
-end
