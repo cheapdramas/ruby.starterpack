@@ -234,8 +234,11 @@ names = hash_simp['data'].map {|h| h[:name]}
 inp = gets.strip.downcase
 
 found = names.select do |tweet|
-    tweet.downcase.include?(zodiac)
+    tweet.downcase.include?(inp)
 end 
-    
 
-puts "hello github"
+if found.length != 0
+    puts found[0]
+else
+    puts'Ніхуя'
+end
