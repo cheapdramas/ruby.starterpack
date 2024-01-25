@@ -88,7 +88,7 @@
 #
 #
 #puts chuck_noris.shuffle[0]
-
+#########################################
 #ЗАДАЧА З БУЛЕАНОМ АЛЕ В ЦИКЛІ
 #loop do
 #    guess = gets.to_i
@@ -153,7 +153,7 @@
 
 #          Хеши          first_hash = {'Україна'=>'Київ','Богдан'=>'Хуєсос'}
 #                        puts first_hash['Богдан'] #Виведе хуєсос
-
+#########################################################################################
 #hash = {
 #    'Жопа' =>'balls',
 #    'Гомно' =>'ass',
@@ -179,7 +179,7 @@
 #
 #    end
 #end
-
+######################################################################
 #       Символи і хеши              frst_symb = :lol
 
 #                                   hash_key_symbol = {
@@ -191,7 +191,7 @@
 #SHORTER hash_key_symbol
 #hash_key_symbol = {name: 'Sherlock',asshole:'oopsiewoopsiewemadefuckywakyafakaboingo'}
 #puts hash_key_symbol
-
+#########################################################################################
 
 #countries = [
 #    'Україна',
@@ -243,7 +243,33 @@
 #    puts'Nothing'
 #end
 
-############### MINI QUIZ
+############### MINI QUIZ a lil harder than previous code#############################################################################
+
+require 'yaml'
+
+
+
+a_code = 'A'.ord
+all_questions = YAML.safe_load_file('questions.yml',symbolize_names:true)
+
+
+
+
+all_questions.shuffle.each do |question_data|
+    puts "\n\n == #{question_data[:question]} == \n\n"
+
+    correct_answer = question_data[:answers][0]
+    #{A: something,B:Something}
+    answers= question_data[:answers].shuffle.each_with_index.inject({}) do |result,(answer,i)|
+        answer_char = (a_code + i).chr
+        result[answer_char] = answer
+        puts "#{answer_char}:#{answer}"
+        result
+
+        
+    end
+end
+
 
 
 
